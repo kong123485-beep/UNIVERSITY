@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>合約法 Contract Law — 中英對照筆記</title>
+<style>
+:root{--bg:#f7f5ef;--card:#fff;--ink:#1a1a1a;--mut:#666;--line:#e8e0d0;--accent:#8a1a1a;--accent2:#1a4a7a;--tag:#fff3d6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"PingFang HK","PingFang TC","Microsoft JhengHei",system-ui,-apple-system,sans-serif;line-height:1.6}
+header{max-width:1100px;margin:0 auto;padding:36px 20px 18px}h1{font-size:32px;margin:0;line-height:1.2}h1 span{color:var(--accent)} .sub{color:var(--mut);margin-top:8px}
+.controls{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;gap:8px;flex-wrap:wrap}.controls button{border:1px solid #ddd;background:#fff;padding:8px 14px;border-radius:999px;cursor:pointer;font-size:14px}.controls button.active{background:#1a1a1a;color:#fff}
+main{max-width:1100px;margin:18px auto 60px;padding:0 20px;display:grid;gap:18px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.sec-head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px} .sec-head h2{margin:0;font-size:20px}.sec-head h2 small{display:block;font-weight:400;color:var(--mut);font-size:13px;margin-top:2px}.badge{background:var(--tag);padding:4px 10px;border-radius:999px;font-size:12px;white-space:nowrap}
+table{width:100%;border-collapse:collapse}th{ text-align:left;padding:12px 18px;background:#faf8f2;font-size:13px;color:#555;border-bottom:1px solid var(--line)}td{padding:12px 18px;border-bottom:1px solid #f0ead9;vertical-align:top}td.en{width:50%;color:#222}td.zh{width:50%;color:#333}tr:last-child td{border-bottom:none}
+.en b,.zh b{color:var(--accent2)} .case{font-style:italic} .note{padding:14px 18px;background:#fffbe6;font-size:14px} .pill{display:inline-block;background:#eef3ff;color:#1a4a7a;padding:1px 8px;border-radius:999px;font-size:12px;margin-right:6px}
+footer{max-width:1100px;margin:0 auto;padding:0 20px 40px;color:#888;font-size:13px}
+@media(max-width:700px){td{display:block;width:100%!important}td.zh{border-top:1px dashed #eee;padding-top:4px}th.zh{display:none}}
+</style></head><body>
+<header><h1>合約法 <span>Contract Law</span><br>中英對照筆記</h1><p class="sub">Hong Kong 合約法重點 · Offer / Acceptance / Consideration / Terms / Vitiating Factors / Discharge / Remedies / SOGO / Agency / Guarantee · 適用於考試溫習</p></header>
+<div class="controls"><button class="active" onclick="show('all',this)">全部 All</button><button onclick="show('formation',this)">成立 Formation</button><button onclick="show('terms',this)">條款 Terms</button><button onclick="show('vitiating',this)">效力瑕疵 Vitiating</button><button onclick="show('discharge',this)">解除 Discharge</button><button onclick="show('special',this)">專題 Special</button></div>
+<main id="main"></main>
+<footer>溫習提示：先看英文術語 + 案例名，再看中文解釋。案例名、法例編號（SOGO / CECO / UCO / Misrepresentation Ordinance）考試要識寫英文。</footer>
+<script>
+const data=[
+{cat:"formation",title:"合約的基本要素",en:"Elements of a Contract",rows:[
+["A legally enforceable agreement","一項具法律強制執行力的協議"],
+["Freedom of contract","合約自由 — 當事人可自由決定是否訂約、與誰訂約及條款內容"],
+["Cartels","卡特爾 / 壟斷聯盟 — 企業之間合謀定價、瓜分市場，可能違反競爭法"] ]},
+{cat:"formation",title:"要約 Offer",en:"Offer",rows:[
+["<b>Offer or Invitation to treat?</b>","<b>要約 還是 要約邀請？</b> 要約邀請只是邀請對方提出要約，本身不具約束力"],
+["<span class='case'>Carbolic Smoke Ball Co.</span> case","<span class='case'>Carbolic Smoke Ball</span> 案 — 向全世界作出的要約亦可成立；廣告若顯示受約束意圖，可構成要約"],
+["<span class='case'>Boots Cash Chemist</span> case","<span class='case'>Boots Cash Chemist</span> 案 — 貨架陳列屬要約邀請，顧客在收銀處付款時才提出要約"],
+["Offer must contain definite terms","要約必須包含明確條款"],
+["Offer must be communicated to the offeree","要約必須傳達至受要約人"],
+["Offeror must have an intention to be legally bound once it is accepted","要約人必須有意圖：一經接受即受法律約束"] ]},
+{cat:"formation",title:"要約的效力 Effectiveness of an Offer",en:"Effectiveness of an Offer",rows:[
+["Withdrawing an offer: <span class='case'>Byrne v Leon Van Tienhoven</span>","撤回要約：<span class='case'>Byrne v Van Tienhoven</span> — 撤回須在接受前傳達至受要約人方有效"],
+["Offer is rejected by the offeree: counter offer, see <span class='case'>Hyde v Wrench</span>","要約被拒絕：反要約，見 <span class='case'>Hyde v Wrench</span> — 反要約即拒絕原要約，原要約不能再被接受"],
+["Offer expires: if not specified, offer will expire after a reasonable period of time","要約屆滿：如無訂明期限，將於合理時間後失效"],
+["Offer becomes invalid upon certain conditions","要約在某些條件出現時失效"],
+["Death of the offeror","要約人死亡 — 要約可能失效"] ]},
+{cat:"formation",title:"承諾 Acceptance",en:"Acceptance",rows:[
+["Offeree must agree to all the terms of the offer, if not, it will be a counter-offer","受要約人必須同意要約的全部條款，否則即構成反要約"],
+["Acceptance cannot be deemed or assumed: silence cannot amount to acceptance: <span class='case'>Felthouse v Bindley</span>","承諾不能被推定或假設：沉默不構成承諾 — <span class='case'>Felthouse v Bindley</span>"],
+["Acceptance must be communicated to the offeror","承諾必須傳達至要約人"],
+["Postal rule, note the treatment of fax and email","郵遞規則：承諾於投寄時生效；注意傳真及電郵的處理（一般按傳達規則，即收到時生效）"],
+["Postal rule does not apply to revocation of offer","郵遞規則不適用於撤回要約 — 撤回須實際傳達方生效"] ]},
+{cat:"formation",title:"代價 Consideration",en:"Consideration",rows:[
+["Definition: ‘some right, interest, profit or benefit accruing to one party, or some forbearance, detriment, loss or responsibility given, suffered or undertaken by the other’ — <span class='case'>Currie v Misa</span>","定義：一方獲得的某種權利、利益、利潤或好處，或另一方付出的容忍、損失或承擔的責任 — <span class='case'>Currie v Misa</span>"],
+["Consideration is something of value","代價必須是具有價值的東西"],
+["Consideration must be sufficient but need not be adequate: <span class='case'>Chappell & Co. Ltd. v Nestle Co. Ltd.</span>","代價必須充分（sufficient）但無須相等（adequate）：<span class='case'>Chappell v Nestle</span> — 法院不問代價是否足夠"],
+["Past consideration is no consideration","過去的代價不是代價"] ]},
+{cat:"formation",title:"履行現有責任 Performance of Existing Duties",en:"Performance of Existing Duties",rows:[
+["<span class='case'>Hartley v Ponsonby</span>","<span class='case'>Hartley v Ponsonby</span> — 超出原有責任的額外履行可構成有效代價"],
+["<span class='case'>Stilk v Myrick</span>","<span class='case'>Stilk v Myrick</span> — 僅履行現有合約責任，不構成新代價"],
+["<span class='case'>Williams v Roffey Bros. and Nicholls</span>","<span class='case'>Williams v Roffey</span> — 獲得實際利益（practical benefit）可構成代價"],
+["Executory consideration & executed consideration","待履行的代價（executory）與 已履行的代價（executed）"] ]},
+{cat:"formation",title:"部分付款 Part Payment",en:"Part Payment of Debt",rows:[
+["At common law: <span class='case'>Pinnel’s case</span>","普通法：<span class='case'>Pinnel’s case</span> — 部分付款不能解除全部債務"],
+["<span class='case'>Foakes v Beer</span>","<span class='case'>Foakes v Beer</span> — 債權人接受部分付款，仍可追討餘額"],
+["<span class='case'>D & C Builders Ltd. v Rees</span>","<span class='case'>D & C Builders v Rees</span> — 債務人以經濟壓力迫使接受部分付款，不構成有效和解"],
+["In equity: <span class='case'>Hughes v Metropolitan Railway Co.</span>","衡平法：<span class='case'>Hughes v Metropolitan Railway</span> — 禁反言原則的基礎"],
+["High Trees case: promissory estoppel","<span class='case'>High Trees</span> 案：承諾禁反言（promissory estoppel）— 若一方作出承諾使對方依賴，不得反悔"] ]},
+{cat:"formation",title:"訂約意圖 Intention to Create Legal Relations",en:"Intention",rows:[
+["Normally, social agreements do not constitute a legal obligation","一般而言，社交 / 家庭協議不構成法律責任 — 推定無訂約意圖"],
+["Commercial agreements → presumption that parties have the intention to create legally binding contract","商業協議 → 推定當事人有意訂立具法律約束力的合約"] ]},
+{cat:"formation",title:"合約相對性 Privity of Contract",en:"Privity",rows:[
+["Only parties to the contract can sue and be sued on it, it can neither confer rights nor impose liabilities on others. <span class='case'>Dunlop Pneumatic Tyre Co.</span> case","只有合約當事人可起訴或被起訴，合約不能賦予第三者權利或施加責任 — <span class='case'>Dunlop</span> 案"],
+["Exceptions: Trust / Insurance / Assignment of rights and obligations / Negotiable instruments","例外：信託 / 保險 / 權利與義務的轉讓 / 可轉讓票據"] ]},
+{cat:"formation",title:"訂約能力 Capacity",en:"Capacity",rows:[
+["Note the treatment of: Minors / Limited companies / Mentally disordered persons","注意以下人士的處理：未成年人 / 有限公司 / 精神失常人士"] ]},
+{cat:"formation",title:"合約形式 Formalities",en:"Formalities",rows:[
+["May be made in writing, orally or by conduct","合約可以書面、口頭或行為方式訂立"],
+["Deeds: signed, sealed and delivered","契據：須簽署、蓋印及交付"],
+["Registration: s.3(2) of Land Registration Ordinance","登記：土地註冊條例 s.3(2)"] ]},
+{cat:"terms",title:"合約條款 Terms",en:"Terms",rows:[
+["Express terms — Parol evidence rule","明示條款 — 口頭證據規則：書面合約一般不能以口頭證據推翻"],
+["Implied terms — Terms implied by facts","默示條款 — 由事實默示的條款"],
+["Implied terms — Terms implied by law, by legislation or common law","默示條款 — 由法律默示的條款（成文法或普通法）"] ]},
+{cat:"terms",title:"免責條款 Exemption Clauses",en:"Exemption Clauses",rows:[
+["One party attempts to limit or totally exclude liability if something goes wrong","一方試圖限制或完全免除出錯時的責任"],
+["Common law approach: <span class='case'>Olley v Marlborough Court Ltd.</span>","普通法處理：<span class='case'>Olley v Marlborough Court</span> — 條款須在訂約前納入合約方有效"],
+["Contra proferentem rule: <span class='case'>Houghton v Trafalgar Insurance</span>","作不利解釋規則：<span class='case'>Houghton v Trafalgar</span> — 含糊條款作對提出方不利的解釋"],
+["Control of Exemption Clauses Ordinance (“CECO”)","免責條款管制條例（CECO）"],
+["Sch. 2: Guidelines for reasonable test","附表 2：合理性測試指引"],
+["S.7(1): cannot exclude liability for death or personal injury","第 7(1) 條：不能免除因疏忽引致死亡或人身傷害的責任"] ]},
+{cat:"vitiating",title:"無效 vs 可撤銷 Void vs Voidable",en:"Void vs Voidable",rows:[
+["VOID: 1. Void from beginning 2. No right to continue 3. No need to perform contract 4. Original position is restored","無效 VOID：1. 自始無效 2. 無權繼續 3. 無須履行 4. 恢復原狀"],
+["VOIDABLE: 1. Exists until avoided 2. Innocent party can choose to avoid or affirm the contract 3. Obliged to carry out contractual obligations until revoked","可撤銷 VOIDABLE：1. 在被撤銷前仍然存在 2. 無辜方可選擇撤銷或確認合約 3. 在撤銷前仍須履行合約責任"],
+["Unenforceable contracts — Valid but not enforceable maybe because of formalities not satisfied. e.g. sale & purchase contract for land made orally","不可強制執行的合約 — 有效但因手續不符而不能強制執行，例如口頭訂立的土地買賣合約"] ]},
+{cat:"vitiating",title:"失實陳述 Misrepresentation",en:"Misrepresentation",rows:[
+["A false statement of fact / induces the party to enter into contract / the statement is relied upon","失實陳述 = 虛假的事實陳述 / 誘使對方訂約 / 對方信賴該陳述"],
+["Types: 1. Fraudulent 2. Negligent 3. Innocent","種類：1. 欺詐性 2. 疏忽性 3. 無辜性"],
+["Fraudulent: statement made knowingly or without belief in its truth, or recklessly. <span class='case'>Polaroid Far East Ltd. v Bel Trade Co. Ltd.</span> May rescind & sue for damages","欺詐性：明知虛假、無相信為真或罔顧真假而作出 — <span class='case'>Polaroid v Bel Trade</span>；可撤銷合約並索償"],
+["Negligent: false statement made honestly yet without reasonable grounds. <span class='case'>Derry v Peek; Hedley Byrne v Heller; Esso v Mardon</span>. S.3(1) Misrepresentation Ordinance: burden reversed. May rescind and claim damages","疏忽性：誠實但無合理理由相信為真 — <span class='case'>Derry v Peek; Hedley Byrne; Esso v Mardon</span>；失實陳述條例 s.3(1) 舉證責任倒置；可撤銷並索償"],
+["Innocent: representor has reasonable grounds to believe it was true. At common law, can rescind but no damages. S.3(2): court may award damages instead of rescission. Cannot claim rescission & damages at the same time","無辜性：陳述人有合理理由相信為真；普通法只可撤銷、無賠償；s.3(2) 法庭可酌情以賠償代替撤銷；不能同時要求撤銷及賠償"] ]},
+{cat:"vitiating",title:"脅迫 Duress",en:"Duress",rows:[
+["Violence or threatened violence to a party to contract","對合約一方施加暴力或威脅暴力"],
+["Economic duress","經濟脅迫"],
+["Contract is voidable","合約屬可撤銷"] ]},
+{cat:"vitiating",title:"錯誤 Mistake",en:"Mistake",rows:[
+["Common mistake — both parties make the same mistake: as to existence of subject matter / as to attainability / different understanding, i.e. no meeting of minds","共同錯誤 — 雙方犯同一錯誤：標的物不存在 / 交易目的無法達成 / 理解不同，即雙方無合意"],
+["Unilateral mistake — one party enters into contract under a mistake while the other knows the truth","單方錯誤 — 一方在錯誤下訂約，而另一方知悉真相"] ]},
+{cat:"vitiating",title:"Non Est Factum & 不當影響",en:"Non Est Factum & Undue Influence",rows:[
+["Non est factum — ‘This is not my deed’. Unable to understand intention of document and radically different from what person thought. Available if mistake not caused by own fault. Whether person took reasonable steps to ascertain content","Non est factum — 「這不是我的契據」。無法理解文件意圖，且與所想簽署的內容截然不同；若錯誤非因自身過失所致可援引；須看有否採取合理步驟了解文件內容"],
+["Undue influence — A person’s free will may be influenced by another. Special relationship. Presumption: stronger party is in position to exert influence over weaker one","不當影響 — 一方的自由意志受另一方影響；存在特殊關係；推定：強勢一方處於可向弱勢一方施加影響的位置"] ]},
+{cat:"vitiating",title:"非法與違反公共政策 Illegality",en:"Illegality",rows:[
+["Illegal contracts: violates a statute or a rule of common law — <span class='case'>Hipol v Haffar Hussain</span>","非法合約：違反法例或普通法規則 — <span class='case'>Hipol v Haffar Hussain</span>"],
+["Contrary to public policy","違反公共政策"],
+["Contract will be held unenforceable","合約將被裁定不可強制執行"] ]},
+{cat:"vitiating",title:"寡頭、不道德與不合情理合約",en:"Oligopolies, Ethics & Unconscionable Contracts",rows:[
+["Oligopolies: market controlled by small number of suppliers","寡頭壟斷：市場由少數供應商控制"],
+["Business ethics: <span class='case'>Hang Seng Credit Card Ltd. v Tsang Nga Lee</span>","商業道德：<span class='case'>Hang Seng Credit Card v Tsang Nga Lee</span>"],
+["Unconscionable Contracts Ordinance (“UCO”) — applies to sale of goods or supply of services, where one party ‘deals as consumer’","不合情理合約條例（UCO）— 適用於售賣貨品或提供服務，而一方以消費者身份交易的合約"],
+["Factors to determine whether contract is unconscionable: s.6 UCO","判斷是否不合情理的因素：UCO s.6"],
+["Effects of unconscionable contract: s.5(1) UCO","不合情理合約的效力：UCO s.5(1)"] ]},
+{cat:"discharge",title:"解除合約 Discharge",en:"Discharge",rows:[
+["1. Discharge by Performance — Entire contract rule: <span class='case'>Bolton v Mahadeva</span>","1. 因履行而解除 — 整體合約規則：<span class='case'>Bolton v Mahadeva</span> — 未完全履行則無權收款"],
+["Substantial performance: <span class='case'>Hoenig v Isaacs</span>","實質履行：<span class='case'>Hoenig v Isaacs</span> — 實質履行可獲報酬，須扣減瑕疵部分"],
+["Divisible contract: divided into parts","可分割合約：可分為多部分履行"],
+["2. Discharge by Agreement","2. 因協議而解除"],
+["3. Discharge by Frustration — Illegal performance / Subject-matter destroyed: <span class='case'>Taylor v Caldwell</span>","3. 因受挫而解除 — 履行變非法 / 標的物被毀：<span class='case'>Taylor v Caldwell</span>"],
+["Frustration by fundamental change: <span class='case'>Wong Lai Ying v Chinachem</span>","因根本改變而受挫：<span class='case'>Wong Lai Ying v Chinachem</span>"],
+["Basis of contract defeated: <span class='case'>Krell v Henry</span>","合約基礎被破壞：<span class='case'>Krell v Henry</span>"],
+["Force majeure clause: must be drafted in clear terms","不可抗力條款：必須以清晰條文訂明"],
+["4. Discharge by Breach — to affirm the contract / to accept the breach, repudiate or rescind and sue for damages","4. 因違約而解除 — 確認合約 / 接受違約、廢除或撤銷合約並索償"] ]},
+{cat:"terms",title:"違約條款種類 Breach of Terms",en:"Breach",rows:[
+["Breach of condition — can repudiate: <span class='case'>Poussard v Spiers & Pond</span>","違反條件條款 — 可廢除合約：<span class='case'>Poussard v Spiers</span>"],
+["Breach of warranty — can only claim damages: <span class='case'>Bettini v Gye</span>","違反保證條款 — 只可索償：<span class='case'>Bettini v Gye</span>"],
+["Innominate (no name) terms: <span class='case'>Hongkong Fir Shipping Co. Ltd.</span> case","無名條款：<span class='case'>Hongkong Fir Shipping</span> 案 — 按違約後果嚴重程度決定"],
+["Intention of parties at time of making contract: <span class='case'>Bunge Corp. v Tradax Export SA</span>","訂約時當事人的意圖：<span class='case'>Bunge v Tradax</span>"] ]},
+{cat:"discharge",title:"損害賠償 Damages",en:"Damages",rows:[
+["Remoteness: general rule in <span class='case'>Hadley v Baxendale</span>, 3rd limb in <span class='case'>Victoria Laundry v Newman</span>: losses recoverable when party in breach actually possesses knowledge of special circumstances","遙遠性：<span class='case'>Hadley v Baxendale</span> 一般規則；<span class='case'>Victoria Laundry</span> 第三肢 — 違約方實際知悉特殊情況（如額外利潤損失）時，該損失亦可追討"],
+["‘Reasonably foreseeable’: <span class='case'>The Heron II</span>","「合理可預見」：<span class='case'>The Heron II</span>"],
+["Duty to mitigate: innocent party has to take reasonable steps to mitigate (reduce) the loss","減輕損失責任：無辜方須採取合理步驟減輕損失"] ]},
+{cat:"discharge",title:"衡平法濟助 Equitable Remedies",en:"Equitable Remedies",rows:[
+["Discretionary, will only be granted if it is just and equitable","衡平法濟助屬酌情性質，只在公正公平時才授予"],
+["Specific Performance — lack of ‘clean hands’: <span class='case'>Falcke v Gray</span>","特定履行 — 「手不潔」者不得獲濟助：<span class='case'>Falcke v Gray</span>"],
+["Injunction — prohibitory injunction / mandatory injunction","禁制令 — 禁止性禁制令 / 強制性禁制令"] ]},
+{cat:"special",title:"貨品售賣條例 Sale of Goods Ordinance (SOGO)",en:"SOGO",rows:[
+["S.22: transfer of risk","第 22 條：風險轉移"],
+["S.19: transfer of property at such time as parties intend","第 19 條：財產權於當事人意圖的時間轉移"],
+["5 rules to determine intention: s.20","判定意圖的 5 條規則：第 20 條"],
+["Caveat emptor","買者自負（caveat emptor）"],
+["S.14: right to sell goods","第 14 條：出售貨品的權利"],
+["S.15: goods shall correspond with description","第 15 條：貨品須與描述相符"],
+["S.16(2): merchantable quality","第 16(2) 條：可銷售品質"],
+["S.16(3): reasonably fit for purpose","第 16(3) 條：合理地適合用途"],
+["S.17: sale by sample","第 17 條：憑樣本售賣"],
+["Acceptance of goods: s.37 SOGO / Payment / Note ss.32 and 33 SOGO","接受貨品：第 37 條 / 付款 / 注意第 32 及 33 條"] ]},
+{cat:"special",title:"票據 Negotiable Instruments",en:"Negotiable Instruments",rows:[
+["Chose in action: intangible personal property right","Chose in action：無形個人財產權利"],
+["Bills of Exchange Ordinance","匯票條例"],
+["Holder in due course will have full right provided holder has given value and is in good faith","正當持票人如已付出代價且出於真誠，即享有完整權利"] ]},
+{cat:"special",title:"代理 Agency",en:"Agency",rows:[
+["Express authority / Implied authority","明示授權 / 默示授權"],
+["Ostensible (Apparent) authority","表面（表見）授權"],
+["Authority by ratification / Agency by necessity","追認授權 / 必要代理"],
+["Undisclosed principal: when agent does not disclose identity of principal, agent may be entitled to sue and be sued","未披露主事人：代理人未披露主事人身份時，代理人可能有權起訴及被起訴"] ]},
+{cat:"special",title:"擔保與彌償 Guarantee & Indemnity",en:"Guarantee & Indemnity",rows:[
+["Tripartite arrangement","三方安排"],
+["Guarantee: secondary liability","擔保：次要責任"],
+["Indemnity: primary liability","彌償：主要責任"],
+["Undue influence — relationship of trust and confidence / subject matter calls for explanation","不當影響 — 信任關係 / 標的事項需要解釋"],
+["<span class='case'>Barclays Bank v O’Brien; Lloyds Bank v Bundy; Royal Bank of Scotland v Etridge</span>","<span class='case'>Barclays v O’Brien; Lloyds v Bundy; RBS v Etridge</span>"],
+["Put on inquiry: seek independent legal advice","銀行須受查究：應尋求獨立法律意見"] ]},
+{cat:"special",title:"電子商務 & 時效 E-commerce & Limitation",en:"E-commerce & Limitation",rows:[
+["E-commerce — s.5 Electronic Transactions Ordinance: electronic record = valid written evidence as long as it is accessible for subsequent reference","電子商務 — 電子交易條例 s.5：電子紀錄如可供日後查閱，即為有效書面證據"],
+["S.6: electronic signature","第 6 條：電子簽署"],
+["Limitation — simple contract or tort: 6 years from date cause of action accrued","時效 — 簡單合約或侵權：自訴因產生起 6 年"],
+["Contracts under seal: 12 years","蓋印合約：12 年"],
+["Actions to recover land: 12 years","追討土地訴訟：12 年"] ]},
+];
+function render(filter){
+ const main=document.getElementById('main'); main.innerHTML='';
+ data.filter(d=>filter==='all'||d.cat===filter).forEach(d=>{
+  let rows=d.rows.map(r=>`<tr><td class="en">${r[0]}</td><td class="zh">${r[1]}</td></tr>`).join('');
+  main.innerHTML+=`<section><div class="sec-head"><h2>${d.title}<small>${d.en}</small></h2><span class="badge">${d.cat}</span></div><table><tr><th>ENGLISH 英文</th><th class="zh">中文 CHINESE</th></tr>${rows}</table></section>`;
+ });
+}
+function show(f,btn){document.querySelectorAll('.controls button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render(f)}
+render('all');
+</script></body></html>
