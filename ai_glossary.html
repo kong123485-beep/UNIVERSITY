@@ -5,225 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI 技術名詞白話文懶人包</title>
     <style>
-        :root {
-            --primary: #2563eb;
-            --primary-light: #eff6ff;
-            --text-dark: #1e293b;
-            --text-light: #64748b;
-            --border: #e2e8f0;
-            --bg: #f8fafc;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--bg);
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: var(--primary);
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 2rem;
-        }
-        .subtitle {
-            text-align: center;
-            color: var(--text-light);
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-        }
-        .section {
-            margin-bottom: 35px;
-        }
-        .section-title {
-            font-size: 1.3rem;
-            color: var(--primary);
-            border-left: 5px solid var(--primary);
-            padding-left: 12px;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-        @media (min-width: 768px) {
-            .grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        .card {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 20px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-            border-color: #cbd5e1;
-        }
-        .term-header {
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-            margin-bottom: 8px;
-            flex-wrap: wrap;
-        }
-        .term-name {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #0f172a;
-        }
-        .term-full {
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-        .term-definition {
-            font-size: 0.95rem;
-            color: #334155;
-            background-color: var(--primary-light);
-            padding: 10px 14px;
-            border-radius: 6px;
-            border-left: 3px solid var(--primary);
-        }
-        .analogy-box {
-            background: #f1f5f9;
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 40px;
-            border: 1px dashed var(--text-light);
-        }
-        .analogy-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            color: #0f172a;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .analogy-item {
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-        .analogy-item strong {
-            color: var(--primary);
-        }
+        :root{--primary:#2563eb;--primary-light:#eff6ff;--text-dark:#1e293b;--text-light:#64748b;--border:#e2e8f0;--bg:#f8fafc}
+        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6;color:var(--text-dark);background-color:var(--bg);margin:0;padding:20px}
+        .container{max-width:900px;margin:0 auto;background:#fff;padding:40px;border-radius:12px;box-shadow:0 4px 6px -1px rgba(0,0,0,.1)}
+        h1{color:var(--primary);text-align:center;margin-bottom:10px;font-size:2rem}
+        .subtitle{text-align:center;color:var(--text-light);margin-bottom:40px;font-size:1.1rem}
+        .section{margin-bottom:35px}
+        .section-title{font-size:1.3rem;color:var(--primary);border-left:5px solid var(--primary);padding-left:12px;margin-bottom:20px;font-weight:bold}
+        .grid{display:grid;grid-template-columns:1fr;gap:15px}
+        @media(min-width:768px){.grid{grid-template-columns:1fr 1fr}}
+        .card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:20px;transition:transform .2s,box-shadow .2s}
+        .card:hover{transform:translateY(-2px);box-shadow:0 10px 15px -3px rgba(0,0,0,.05);border-color:#cbd5e1}
+        .term-header{display:flex;align-items:baseline;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+        .term-name{font-size:1.15rem;font-weight:700;color:#0f172a}
+        .term-full{font-size:.85rem;color:var(--text-light)}
+        .term-definition{font-size:.95rem;color:#334155;background-color:var(--primary-light);padding:10px 14px;border-radius:6px;border-left:3px solid var(--primary)}
+        .analogy-box{background:#f1f5f9;padding:25px;border-radius:10px;margin-top:40px;border:1px dashed var(--text-light)}
+        .analogy-title{font-weight:bold;font-size:1.1rem;margin-bottom:15px;color:#0f172a;display:flex;align-items:center;gap:8px}
+        .analogy-item{margin-bottom:10px;font-size:.95rem}
+        .analogy-item strong{color:var(--primary)}
+        .badge{display:inline-block;background:#dbeafe;color:#1d4ed8;font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:999px;margin-left:4px;vertical-align:middle}
     </style>
 </head>
 <body>
-
 <div class="container">
     <h1>AI 技術名詞白話文懶人包</h1>
     <div class="subtitle">為你將複雜的開發與架構名詞，翻譯成聽得懂的日常白話文 🚀</div>
 
-    <!-- 第一部分 -->
     <div class="section">
         <div class="section-title">一、 核心大腦與基礎</div>
         <div class="grid">
-            <div class="card">
-                <div class="term-header">
-                    <span class="term-name">AI</span>
-                    <span class="term-full">Artificial Intelligence</span>
-                </div>
-                <div class="term-definition"><strong>白話說：</strong> 讓電腦學會像人類一樣思考、做決策或處理任務的技術總稱。</div>
-            </div>
-            <div class="card">
-                <div class="term-header">
-                    <span class="term-name">LLM</span>
-                    <span class="term-full">Large Language Model</span>
-                </div>
-                <div class="term-definition"><strong>白話說：</strong> 讀過海量文字、很會「文字接龍」與理解人類語言的超級人工智慧大腦。</div>
-            </div>
+            <div class="card"><div class="term-header"><span class="term-name">AI</span><span class="term-full">Artificial Intelligence</span></div><div class="term-definition"><strong>白話說：</strong> 讓電腦學會像人類一樣思考、做決策或處理任務的技術總稱。</div></div>
+            <div class="card"><div class="term-header"><span class="term-name">LLM</span><span class="term-full">Large Language Model</span></div><div class="term-definition"><strong>白話說：</strong> 讀過海量文字、很會「文字接龍」與理解人類語言的超級人工智慧大腦。</div></div>
         </div>
     </div>
 
-    <!-- 第二部分 -->
     <div class="section">
         <div class="section-title">二、 資料傳輸與溝通（新加入！）</div>
         <div class="grid">
-            <div class="card">
-                <div class="term-header">
-                    <span class="term-name">API</span>
-                    <span class="term-full">Application Programming Interface</span>
-                </div>
-                <div class="term-definition"><strong>白話說：</strong> 軟體之間的「服務傳送門」或「點餐傳送管道」。讓 AI 大腦可以和外面的網站、資料庫安全地交換資料。</div>
-            </div>
-            <div class="card">
-                <div class="term-header">
-                    <span class="term-name">MCP</span>
-                    <span class="term-full">Model Context Protocol</span>
-                </div>
-                <div class="term-definition"><strong>白話說：</strong> AI 界的「Type-C 萬用插頭規格」。以前每家 AI 串接工具都要單獨寫程式，現在用這套標準，一個插頭就能通吃所有工具。</div>
-            </div>
-            <div class="card">
-                <div class="term-header">
-                    <span class="term-name">Transport</span>
-                    <span class="term-full">傳輸層 / 傳輸機制</span>
-                </div>
-                <div class="term-definition"><strong>白話說：</strong> 決定資料怎麼「坐車」過去。例如在 MCP 架構中，資料可以選擇坐「Stdio 車」（本機直接對話）或「SSE/HTTP 車」（走網路線）。</div>
-            </div>
-            <div class="card">
-                <div class="term-header">
-                    <span class="term-name">Token</span>
-                    <span class="term-full">字符 / 權杖</span>
-                </div>
-                <div class="term-definition"><strong>白話說：</strong> AI 閱讀文字的「計量單位」。AI 不是按字算，而是把字拆成小碎片（Token）。這也是你付費給 API、或者 AI 能記住多少前文的計算標準。</div>
-            </div>
+            <div class="card"><div class="term-header"><span class="term-name">API</span><span class="term-full">Application Programming Interface</span></div><div class="term-definition"><strong>白話說：</strong> 軟體之間的「服務傳送門」或「點餐傳送管道」。讓 AI 大腦可以和外面的網站、資料庫安全地交換資料。</div></div>
+            <div class="card"><div class="term-header"><span class="term-name">MCP</span><span class="term-full">Model Context Protocol</span></div><div class="term-definition"><strong>白話說：</strong> AI 界的「Type-C 萬用插頭規格」。以前每家 AI 串接工具都要單獨寫程式，現在用這套標準，一個插頭就能通吃所有工具。</div></div>
+            <div class="card"><div class="term-header"><span class="term-name">Transport</span><span class="term-full">傳輸層 / 傳輸機制</span></div><div class="term-definition"><strong>白話說：</strong> 決定資料怎麼「坐車」過去。例如在 MCP 架構中，資料可以選擇坐「Stdio 車」（本機直接對話）或「SSE/HTTP 車」（走網路線）。</div></div>
+            <div class="card"><div class="term-header"><span class="term-name">Token</span><span class="term-full">字符 / 權杖</span></div><div class="term-definition"><strong>白話說：</strong> AI 閱讀文字的「計量單位」。AI 不是按字算，而是把字拆成小碎片（Token）。這也是你付費給 API、或者 AI 能記住多少前文的計算標準。</div></div>
         </div>
     </div>
 
-    <!-- 第三部分 -->
     <div class="section">
         <div class="section-title">三、 增強與推論架構</div>
         <div class="grid">
+            <div class="card"><div class="term-header"><span class="term-name">RAG</span><span class="term-full">Retrieval-Augmented Generation</span></div><div class="term-definition"><strong>白話說：</strong> 讓 AI 回答前「先翻書/看內部公告」的開卷考試機制。能精準解決 AI 本身不知道最新資訊或容易胡說八道（幻覺）的問題。</div></div>
+            <div class="card"><div class="term-header"><span class="term-name">Prompt</span><span class="term-full">提示詞</span></div><div class="term-definition"><strong>白話說：</strong> 你對 AI 下的指令、問題或開場白（俗稱咒語）。</div></div>
+            <div class="card"><div class="term-header"><span class="term-name">Inference</span><span class="term-full">推論</span></div><div class="term-definition"><strong>白話說：</strong> AI 大腦學成畢業後，實際在現場「聽題、動腦、回答」的這個運作輸出過程。</div></div>
+            <div class="card"><div class="term-header"><span class="term-name">AI Agent</span><span class="term-full">智能代理</span></div><div class="term-definition"><strong>白話說：</strong> 不只會聊天的進階 AI。它會自己把大任務拆成小步驟，並自動呼叫工具去完成一整套工作。</div></div>
+        </div>
+    </div>
+
+    <!-- NEW SECTION 4 -->
+    <div class="section">
+        <div class="section-title">四、 點解 AI 識「理解」？— Embedding & Transformer <span class="badge">NEW ★</span></div>
+        <div class="grid">
             <div class="card">
-                <div class="term-header">
-                    <span class="term-name">RAG</span>
-                    <span class="term-full">Retrieval-Augmented Generation</span>
-                </div>
-                <div class="term-definition"><strong>白話說：</strong> 讓 AI 回答前「先翻書/看內部公告」的開卷考試機制。能精準解決 AI 本身不知道最新資訊或容易胡說八道（幻覺）的問題。</div>
+                <div class="term-header"><span class="term-name">Embedding</span><span class="term-full">嵌入 / 向量編碼</span></div>
+                <div class="term-definition"><strong>白話說：</strong> 將文字 / 圖片 / 語音變成一串數字座標（Vector），等於畀每個意思一個「GPS 定位」。意思越近，座標越近。<br><br>例：<strong>「貓」</strong>同<strong>「狗」</strong>會企得好近，<strong>「貓」</strong>同<strong>「火箭」</strong>就企得好遠。AI 就係靠距離嚟判斷邊啲嘢相似。</div>
             </div>
             <div class="card">
-                <div class="term-header">
-                    <span class="term-name">Prompt</span>
-                    <span class="term-full">提示詞</span>
-                </div>
-                <div class="term-definition"><strong>白話說：</strong> 你對 AI 下的指令、問題或開場白（俗稱咒語）。</div>
+                <div class="term-header"><span class="term-name">Vector</span><span class="term-full">向量</span></div>
+                <div class="term-definition"><strong>白話說：</strong> Embedding 生出嚟嗰串數字，例如 [0.21, -0.88, 0.45 ...] 幾百至幾千維。AI 唔係睇字，係睇呢啲數字嚟做數學運算。</div>
             </div>
             <div class="card">
-                <div class="term-header">
-                    <span class="term-name">Inference</span>
-                    <span class="term-full">推論</span>
-                </div>
-                <div class="term-definition"><strong>白話說：</strong> AI 大腦學成畢業後，實際在現場「聽題、動腦、回答」的這個運作輸出過程。</div>
+                <div class="term-header"><span class="term-name">Vector Database</span><span class="term-full">向量資料庫</span></div>
+                <div class="term-definition"><strong>白話說：</strong> 專門用嚟存 Embedding 座標嘅倉庫，識得「搵附近鄰居」。RAG 嗰陣就係靠佢快速搵出最相關嘅文件。<br>常見：Pinecone / Chroma / FAISS / pgvector</div>
             </div>
             <div class="card">
-                <div class="term-header">
-                    <span class="term-name">AI Agent</span>
-                    <span class="term-full">智能代理</span>
-                </div>
-                <div class="term-definition"><strong>白話說：</strong> 不只會聊天的進階 AI。它會自己把大任務拆成小步驟，並自動呼叫工具去完成一整套工作。</div>
+                <div class="term-header"><span class="term-name">Semantic Search</span><span class="term-full">語意搜尋</span></div>
+                <div class="term-definition"><strong>白話說：</strong> 唔係逐隻字對，而係對「意思」。你打「點樣慳錢搭車」，佢都識搵到「交通津貼攻略」，因為 Embedding 座標近。</div>
+            </div>
+            <div class="card">
+                <div class="term-header"><span class="term-name">Transformer</span><span class="term-full">變換器 / 轉換器架構</span></div>
+                <div class="term-definition"><strong>白話說：</strong> 現代所有 LLM（ChatGPT、Claude、Gemini）嘅「大腦架構圖紙」。2017 年 Google 論文《Attention Is All You Need》提出。以前 AI 要逐個字順序讀，好慢；Transformer 可以成段一齊睇，仲識分邊啲字最重要。</div>
+            </div>
+            <div class="card">
+                <div class="term-header"><span class="term-name">Attention</span><span class="term-full">注意力機制</span></div>
+                <div class="term-definition"><strong>白話說：</strong> Transformer 嘅核心招式：讀句子嗰陣，識得「重點睇邊啲字」。例：「佢將蘋果放喺枱上，佢好紅」— AI 要知第二個「佢」係指蘋果定枱，就靠 Attention 計分。</div>
+            </div>
+            <div class="card">
+                <div class="term-header"><span class="term-name">Self-Attention</span><span class="term-full">自注意力</span></div>
+                <div class="term-definition"><strong>白話說：</strong> 一句入面，每個字都同其他字互相打分，問「你同我有幾大關係？」打完分，先知成句嘢嘅真正意思同上下文。</div>
+            </div>
+            <div class="card">
+                <div class="term-header"><span class="term-name">Encoder / Decoder</span><span class="term-full">編碼器 / 解碼器</span></div>
+                <div class="term-definition"><strong>白話說：</strong> Transformer 入面兩大部門。<br>・<strong>Encoder（理解部）：</strong>負責讀晒成段，理解意思，例：BERT。<br>・<strong>Decoder（寫作部）：</strong>負責一個字一個字咁生出嚟，例：GPT。ChatGPT 主要就係 Decoder。</div>
+            </div>
+            <div class="card">
+                <div class="term-header"><span class="term-name">Parameters</span><span class="term-full">參數</span></div>
+                <div class="term-definition"><strong>白話說：</strong> AI 大腦入面啲「旋鈕 / 經驗值」。訓練就係不斷調呢啲旋鈕，調到答得最準。GPT-4 傳聞有過萬億個參數，旋鈕越多，記嘅嘢越細緻。</div>
+            </div>
+            <div class="card">
+                <div class="term-header"><span class="term-name">Training / Fine-tuning</span><span class="term-full">訓練 / 微調</span></div>
+                <div class="term-definition"><strong>白話說：</strong><br>・<strong>Training（讀書）：</strong>由零開始餵海量資料，等 AI 學識語言規律。<br>・<strong>Fine-tuning（補習）：</strong>攞個已經識嘢嘅模型，再用你公司嘅資料特訓，等佢識講你公司嘅口脗同規矩。</div>
+            </div>
+            <div class="card">
+                <div class="term-header"><span class="term-name">Hallucination</span><span class="term-full">幻覺</span></div>
+                <div class="term-definition"><strong>白話說：</strong> AI 好有自信咁「作嘢」— 一本正經講啲唔存在嘅法例、書名、人名。因為佢本質係「估下一個字最似係乜」，唔係查字典。解藥就係 RAG + 叫佢引用來源。</div>
+            </div>
+            <div class="card">
+                <div class="term-header"><span class="term-name">Context Window</span><span class="term-full">上下文窗口</span></div>
+                <div class="term-definition"><strong>白話說：</strong> AI 一次可以記得幾多前文嘅「工作枱大細」。枱太細，講到後面就唔記得前面講過乜。單位用 Token 計，例如 128K Token ≈ 一本厚書。</div>
             </div>
         </div>
     </div>
 
-    <!-- 身體結構比喻 -->
     <div class="analogy-box">
         <div class="analogy-title">💡 串在一起！用「數碼餐廳」來比喻這個技術架構：</div>
         <div class="analogy-item">・<strong>LLM（大腦）：</strong> 餐廳裡的「主廚」，邏輯很好、很會做菜（組織語言）。</div>
+        <div class="analogy-item">・<strong>Transformer（廚房設計圖）：</strong> 成間餐廳嘅廚房架構，決定主廚點樣分工、點樣同時處理幾十張單。</div>
+        <div class="analogy-item">・<strong>Attention（主廚嘅專注力）：</strong> 主廚唔會每樣餸都平均用力，而係識得望住張單，重點留意「少辣、走蔥」呢啲關鍵字。</div>
+        <div class="analogy-item">・<strong>Embedding（食材標籤）：</strong> 每樣食材都有個數字標籤，寫住佢係咩味、咩類別。「牛肉」同「羊肉」標籤好近，「牛肉」同「雪糕」就好遠，主廚一睇就知點配搭。</div>
+        <div class="analogy-item">・<strong>Vector Database（食材倉庫）：</strong> 按標籤排好晒嘅倉庫，要搵「同牛肉最似嘅嘢」，唔使逐格開嚟睇，幾秒就搵到羊肉。</div>
         <div class="analogy-item">・<strong>RAG（翻書）：</strong> 放在廚房的「內部獨家食譜祕笈」，主廚遇到特殊料理時，會先翻閱它再做菜，保證不會做錯。</div>
         <div class="analogy-item">・<strong>API（傳送門）：</strong> 餐廳的「送餐升降梯」，負責把廚房做好的菜（資料）安全傳送到一樓給櫃檯。</div>
         <div class="analogy-item">・<strong>MCP（萬用插頭）：</strong> 廚房裡「統一規格的電器插座」，不管換哪一牌的微波爐或果汁機（外部工具），插上去立刻就能用。</div>
@@ -231,6 +129,5 @@
         <div class="analogy-item">・<strong>Token（計量單位）：</strong> 廚房烹飪時消耗的「瓦斯和食材克數」，用多少算多少，也是付薪水/成本的依據。</div>
     </div>
 </div>
-
 </body>
 </html>
