@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>History Archive · 歷史檔案</title>
+<style>
+body{margin:0;font-family:"PingFang HK","Microsoft JhengHei",system-ui,sans-serif;background:#fafaf9;color:#1c1917}
+.wrap{max-width:1100px;margin:auto;padding:32px 20px 80px}
+h1{font-size:42px;margin:6px 0 8px}
+.badge{display:inline-block;background:#dcfce7;border:1px solid #86efac;color:#166534;border-radius:999px;padding:4px 10px;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:20px}
+.card{background:#fff;border:2px solid #16a34a;border-radius:16px;padding:18px}
+.card h3{margin:8px 0 4px;font-size:18px}
+.card p{color:#57534e;font-size:13px;line-height:1.6}
+.card code{font-size:11px;color:#78716c;word-break:break-all}
+.btn{display:block;text-align:center;background:#1c1917;color:#fff;padding:10px;border-radius:10px;text-decoration:none;margin-top:12px;font-size:14px}
+.note{background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:12px 14px;font-size:13px;color:#166534;margin-top:16px}
+.search{width:100%;padding:12px 14px;border:1px solid #e7e5e4;border-radius:12px;font-size:15px;margin-top:16px}
+h2{margin-top:36px}
+.old{border:1px solid #e7e5e4}
+.old .btn{background:#fff;color:#1c1917;border:1px solid #1c1917}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p>📚 HISTORY ARCHIVE · 歷史檔案</p>
+<h1>History Archive<br><span style="font-size:20px;color:#78716c">歷史檔案 / kong123485-beep</span></h1>
+<p>此目錄索引 <code>https://github.com/kong123485-beep/History</code> 內所有歷史對比分析頁面。GitHub Pages 自動部署。</p>
+<div class="note"><strong>最新新增：中日戰爭 + 日本三語版 + 韓國三語版</strong> — 中日戰爭對比分析已上架，一次睇晒。</div>
+<input class="search" placeholder="搜尋：例如 Japan, Korea, JRE, 法國, 德川, 中日戰爭…" oninput="document.querySelectorAll('.card').forEach(c=>c.style.display=c.textContent.toLowerCase().includes(this.value.toLowerCase())?'block':'none')">
+
+<h2>✨ 最新新增 · New</h2>
+<div class="grid">
+  <article class="card">
+    <span class="badge">now - NEW</span>
+    <h3>中日戰爭：對比分析</h3>
+    <p>China-Japanese War — Comparative Analysis<br>甲午戰爭 (1894-95) vs 抗日戰爭 / 第二次中日戰爭 (1937-45)<br>背景 → 爆發原因 → 過程 → 結局 → 影響對比</p>
+    <code>chinajapanesewar.html</code>
+    <a class="btn" href="chinajapanesewar.html">開啟文件 →</a>
+  </article>
+  <article class="card">
+    <span class="badge">now - NEW</span>
+    <h3>日本簡史：三語對照版</h3>
+    <p>Short History of Japan — Trilingual<br>中文 / English / 日本語（附假名 furigana）<br>繩文 → 彌生 → 古墳 → 飛鳥 → 奈良 → 平安 → 鎌倉 → 室町 → 安土桃山 → 江戶 → 明治 → 大正 → 昭和 → 平成 → 令和</p>
+    <code>Short-History-Japan-Trilingual.html</code>
+    <a class="btn" href="Short-History-Japan-Trilingual.html">開啟文件 →</a>
+  </article>
+  <article class="card">
+    <span class="badge">now - NEW</span>
+    <h3>韓國簡史：三語對照版</h3>
+    <p>Short History of Korea — Trilingual<br>中文 / English / 한국어<br>檀君神話 / 古朝鮮 → 三國時代 → 統一新羅 → 高麗 → 朝鮮王朝 → 日本佔領 → 韓戰 → 漢江奇蹟 → 民主化 → K-Culture</p>
+    <code>Short-History-Korea-Trilingual.html</code>
+    <a class="btn" href="Short-History-Korea-Trilingual.html">開啟文件 →</a>
+  </article>
+</div>
+
+<h2>📂 全部檔案 · All Files</h2>
+<div class="grid">
+  <article class="card old"><span class="badge">NEW</span><h3>中日戰爭：對比分析</h3><p>China-Japanese War — Comparative Analysis<br>甲午戰爭 vs 抗日戰爭</p><code>chinajapanesewar.html</code><a class="btn" href="chinajapanesewar.html">開啟文件 →</a></article>
+  <article class="card old"><span class="badge">NEW</span><h3>九流十家：先秦諸子百家互動版</h3><p>Nine Schools Ten Families — Interactive</p><code>Visually-Stunning-Traditional-Chinese.html</code><a class="btn" href="Visually-Stunning-Traditional-Chinese.html">開啟文件 →</a></article>
+  <article class="card old"><span class="badge">NEW</span><h3>三十六計：互動版</h3><p>Thirty-Six Stratagems — Interactive</p><code>thirty_six_stratagems.html</code><a class="btn" href="thirty_six_stratagems.html">開啟文件 →</a></article>
+  <article class="card old"><h3>JRE 萬能正反論證雙語對照溫習範本</h3><p>JRE Bilingual Argument Template</p><code>jrestudy.html</code><a class="btn" href="jrestudy.html">開啟文件 →</a></article>
+  <article class="card old"><h3>香港殖民地史：由鴉片戰爭到28位港督</h3><p>Hong Kong — From Opium War to 28 Governors</p><code>28.html</code><a class="btn" href="28.html">開啟文件 →</a></article>
+  <article class="card old"><h3>香港歷史長卷互動版 1841-1997</h3><p>Beautiful About Hong Kong — Interactive Timeline</p><code>Beautiful-About-Hong-Kong.html</code><a class="btn" href="Beautiful-About-Hong-Kong.html">開啟文件 →</a></article>
+  <article class="card old"><h3>中國近代史（完整版 1840-1978）</h3><p>Modern Chinese History 1840-1978</p><code>Chinese-Modern-History.html</code><a class="btn" href="Chinese-Modern-History.html">開啟文件 →</a></article>
+  <article class="card old"><h3>法國騷亂成因（雙語）</h3><p>France Riots Causes Bilingual</p><code>France-Riots-Causes-Bilingual.html</code><a class="btn" href="France-Riots-Causes-Bilingual.html">開啟文件 →</a></article>
+  <article class="card old"><h3>以巴衝突（雙語）</h3><p>Israeli-Palestinian Conflict</p><code>Israeli-Palestinian-Conflict.html</code><a class="btn" href="Israeli-Palestinian-Conflict.html">開啟文件 →</a></article>
+  <article class="card old"><h3>冷戰對比：美國視角</h3><p>Cold War — USA Vs</p><code>Cold-War-Usa-Vs.html</code><a class="btn" href="Cold-War-Usa-Vs.html">開啟文件 →</a></article>
+  <article class="card old"><h3>法國大革命 vs 俄國革命</h3><p>French Vs Russian Revolution</p><code>French-Vs-Russian-Revolution.html</code><a class="btn" href="French-Vs-Russian-Revolution.html">開啟文件 →</a></article>
+  <article class="card old"><h3>近代化對比：日本 vs 中國</h3><p>Modernization Japan Vs China</p><code>Modernization-Japan-Vs-China.html</code><a class="btn" href="Modernization-Japan-Vs-China.html">開啟文件 →</a></article>
+  <article class="card old"><h3>大戰爆發：一次 vs 二次</h3><p>Outbreak WWI Vs WWII</p><code>Outbreak-Wwi-Vs-Wwii.html</code><a class="btn" href="Outbreak-Wwi-Vs-Wwii.html">開啟文件 →</a></article>
+  <article class="card old"><h3>統一對比：意大利 vs 德國</h3><p>Unification Italy Vs Germany</p><code>Unification-Italy-Vs-Germany.html</code><a class="btn" href="Unification-Italy-Vs-Germany.html">開啟文件 →</a></article>
+  <article class="card old"><h3>德川幕府滅亡 — 原稿校正版</h3><p>Tokugawa Fall — Original Corrected</p><code>Tokugawa-Fall-Original-Corrected.html</code><a class="btn" href="Tokugawa-Fall-Original-Corrected.html">開啟文件 →</a></article>
+  <article class="card old"><h3>德川滅亡 — 賴肖爾觀點</h3><p>Tokugawa Fall — Reischauer</p><code>Tokugawa-Fall-Reischauer.html</code><a class="btn" href="Tokugawa-Fall-Reischauer.html">開啟文件 →</a></article>
+  <article class="card old"><h3>歷史對比總表 / 大中華歷史整合 Web App / 綜合歷史分析</h3><p>History Tables / Greater China History / History 4</p><code>History-Tables.html</code><a class="btn" href="History-Tables.html">開啟文件 →</a></article>
+</div>
+
+<p style="font-size:12px;color:#78716c;margin-top:32px">Source: github.com/kong123485-beep/History • Branch: main • Deploy: github-pages<br>已新增 chinajapanesewar.html • 已新增 Short-History-Japan-Trilingual.html • 已新增 Short-History-Korea-Trilingual.html</p>
+</div>
+</body>
+</html>
